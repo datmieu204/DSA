@@ -1,0 +1,8 @@
+Bai 10:
+
+* Find the order of nodes in preorder, postorder, and inorder traversals
+
+1.preorder traversals: 39 70 53 24 48 61 83 72 16
+2.postorder traversals: 24 53 48 70 61 39 72 83 16
+3.inorder traversals: 24 48 53 61 70 72 16 83 39
+

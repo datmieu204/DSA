@@ -1,0 +1,25 @@
+
+4.	Given an integer number n, your task is to write two different algorithms
+in pseudo-codes to calculate 2n, and evaluate the complexity of the algorithms.
+
+C1: use recursion
+Function Power_2(n):
+    if n is equal to 0:
+        return 1
+    if n is even then:
+        res = Power_2(n / 2)
+        return res*res
+    else:
+        res = Power_2((n-1) / 2)
+        return res*res*2
+
+=> Time complexity = O(logn)
+
+C2: use loop
+Function Power_2(n):
+    res = 1
+    For i from 1 to n:
+        res = res * 2
+    Return res
+
+=> Time complexity = O(n)

@@ -1,0 +1,35 @@
+Bai 6:
+
+(7,An), (3,Be), (11, Cu), (4, Da) , (8, Gi), (16, En), (21, Ba), (5, Go)
+
+* Hash function: h(k) = floor (SIZE * (k.a mod 1))
+Cài đặt:
+	unsigned int hash( int k, const double a, int Size){
+		double ka = k * a;
+		return floor(SIZE * (ka - (int)ka));
+	}
+    
+	SiZE = 8
+	a = 0,61803399
+
+* Assume collisions are handled by chaining:
+
+	0-->5(Go)
+	1
+	2-->7(An)
+	3-->4(Da)
+	4
+	5
+	6-->3(Be)-->11(Cu)    
+	7-->8(Gi)-->16(En)-->21(Ba)
+
+* Assume collisions are handled by linear probing:
+
+	0-->8(Gi)
+	1-->16(En)
+	2-->7(An)
+	3-->4(Da)
+	4-->21(Ba)
+	5-->5(Go)
+	6-->3(Be)
+	7-->11(Cu)

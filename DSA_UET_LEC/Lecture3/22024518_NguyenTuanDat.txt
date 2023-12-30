@@ -1,0 +1,226 @@
+Bai1:
+    2^logn = n => O(n) 
+    f1 = 4nlogn + 2n => O(nlogn)
+    f2 = 3n + 100logn => O(n)
+    f3 = n^2 + 10n => O(n^2)
+    f4 = 2^10 => O(1)
+    f5 = 4n => O(n)
+    f6 = n^3 => O(n^3)
+    f7 = 2^logn = n => O(n)
+    f8 = 2^n => O(2^n)
+    f9 = nlogn => O(nlogn)
+
+    Sorted: f4 < f7 < f5 < f2 < f9 < f1 < f3  < f6 < f8
+
+Bai2:
+    //C3: use binary
+    //Function Power_2(n, a=2):
+    //    res = 1
+    //    while n > 0     
+    //        if (n % 2 == 0) res = res * a
+    //        a = a * a
+    //        n = n / 2
+    //    return res
+    //=> Time  complexity = O(logn)
+
+    C1: use recursion
+    Function Power_2(n):
+        if n is equal to 0:
+            return 1
+        if n is even then:
+            res = Power_2(n / 2)
+            return res*res
+        else:
+            res = Power_2((n-1) / 2)
+            return res*res*2
+    
+    => Time complexity = O(logn)
+
+    C2: use loop
+    Function Power_2(n):
+        res = 1
+        For i from 1 to n:
+            res = res * 2
+        Return res
+
+    => Time complexity = O(n)
+
+Bai3:
+    Data Structure Queue by Array
+        Variables:  
+            - queue: array of intergers
+            - max_N: maximum of the queue
+            - size_queue: current size of the queue (init to 0)
+
+        //O(1)
+        Function size() -> intergers   
+            Return size_queue
+
+        //O(1)
+        Function empty() -> boolean
+            Return size_queue == 0
+
+        //O(1), O(max_N)
+        Function push(x: interger)
+            if size_queue == max_N
+                Return
+            queue[size_queue] <- x
+            size_queue <- size_queue + 1
+
+        //O(1), O(size_queue)
+        Function pop()
+            If size_queue == 0
+                Return
+            For i from 0 to size_queue - 1
+                queue[i] <- queue[i + 1]
+            size_queue <- size_queue - 1
+
+        //O(1)
+        Function front() -> interger
+            If size_queue == 0 
+                Return -1
+            Return queue[0]   
+
+Bai 4:
+    Data Structure Queue by LinkedList
+        Variables:
+            - front: pointer to the first node in the queue
+            - back: pointer to the last node in the queue
+
+        //O(1)
+        Function initQueue()
+            Set front <- NULL
+            Set back <- NULL
+
+        //O(1)
+        Function IsEmpty() -> boolean
+            Return (front == NULL)
+
+        //O(n)
+        Function size() -> integer
+            Set cnt <- 0
+            Set tmp <- front
+            While (tmp != NULL)
+                Increment cnt by 1
+                Set tmp <- tmp->next
+            Return cnt
+
+        //O(1)
+        Function Front() -> integer
+            If (IsEmpty())
+                Return -1
+            Return front->data
+
+        //O(n)
+        Function push(x: integer)
+            Set newNode <- makeNode(x)
+            If (IsEmpty())
+                Set front <- newNode
+                Set back <- newNode
+                Return
+            Set tmp <- front
+            While (tmp->next != NULL)
+                Set tmp <- tmp->next
+            Set tmp->next <- newNode
+
+        //O(1)
+        Function pop()
+            If (IsEmpty())
+                Return
+            Set tmp <- front
+            Set front <- front->next
+            Delete tmp
+
+        //O(n)
+        Function print()
+            Set tmp <- front
+            While (tmp != NULL)
+                Print tmp->data
+                Set tmp <- tmp->next
+
+
+Bai 5:
+    Data Structure Stack by Array
+    
+        Variables:
+            - Stack: array of integers
+            - max_N: maximum capacity of the stack 100000
+            - size_stack: current size of the stack (initialized to 0)
+
+        //O(1)
+        Function size() -> integer
+            Return size_stack
+
+        //O(1)
+        Function empty() -> boolean
+            Return size_stack == 0
+
+        //O(1)
+        Function push(x: integer)
+            If size_stack == max_N
+                Return
+            Stack[size_stack] <- x
+            Increment size_stack by 1
+
+        //O(1)
+        Function pop()
+            If size_stack == 0
+                Return
+            Decrement size_stack by 1
+		Return Stack[]
+
+        //O(1)
+        Function top()
+            If size_stack == 0
+                Return
+            Print Stack[size_stack - 1]
+
+Bai 6:
+    Data Structure Stack by LinkedList
+        Variables:
+            - top: pointer to the top node of the stack
+            - bottom: pointer to the bottom node of the stack
+
+        //O(1)
+        Function init()
+            Set top <- NULL
+            Set bottom <- NULL
+        
+        //O(1)
+        Function IsEmpty() -> boolean
+            Return (top == NULL)
+
+        //O(n)
+        Function size() -> integer
+            Set cnt <- 0
+            Set tmp <- top
+            While (tmp != NULL)
+                Increment cnt by 1
+                Set tmp <- tmp->next
+            Return cnt
+
+        //O(1)
+        Function push(x: integer)
+            Set newNode <- makeNode(x)
+            If (IsEmpty())
+                Set top <- newNode
+                Set bottom <- newNode
+                Return
+            Set tmp <- top
+            Set top <- newNode
+            Set newNode->next <- tmp
+
+        //o(1)
+        Function pop()
+            If (IsEmpty())
+                Return
+            Set tmp <- top
+            Set top <- top->next
+            Delete tmp
+
+        //O(n)
+        Function print()
+            Set tmp <- top
+            While (tmp != NULL)
+                Print tmp->data
+                Set tmp <- tmp->next

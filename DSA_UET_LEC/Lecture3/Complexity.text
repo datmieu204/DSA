@@ -1,0 +1,7 @@
+
+
+O(1) (logn) (can bac n) (n) (nlogn) (n^2) (n^3) (2^n) (3^n) (n!) (n^n)
+
+O(1) <= (n!) <= O(n^n)
+O(1) <= log(n!) <= O(nlogn)
+    

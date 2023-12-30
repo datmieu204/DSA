@@ -1,0 +1,90 @@
+1. Lý thuyết
+
+- Đơn đồ thị:
+- Đa đồ thị:
+- Giả đồ thị (có khuyển):
+
+- Đơn đồ thị có hướng:
+- Đơn đồ thị vô hướng:
+- Đa đồ thị có hướng:
+- Đa đồ thị vô hướng:
+
+- Đỉnh kề, cạnh liên thuộc:
+- Bậc của đỉnh trong đồ thị vô hướng
+- Bậc của đỉnh trong đồ thị có hướng (bậc vào, bậc ra)
+
+- Đường đi, chu trình:
+- Liên thông, thành phần liên thông (đồ thị vô hướng)
+- Liên thông mạnh, liên thông yếu (đồ thị có hướng)
+
+2. Cài đặt, biểu diễn đồ thị:
+
+- Ma trận kề (mật độ dày) (vô hướng, có hướng):
+    + Đồ thị vô hướng: ma trận đối xứng, các phần tử trên đường chéo chính = 0
+      và các phần tử trên đường chéo phụ = 1 nếu có cạnh nối 2 đỉnh đó, = 0 nếu không có cạnh nối 2 đỉnh đó
+      và tổng phần tử trên 1 hàng = bậc của đỉnh đó, tổng phần tử trên ma trận = 2 * số cạnh
+
+    + Đồ thị có hướng: ma trận không đối xứng, các phần tử trên đường chéo chính = 0
+      tổng phần tử trên 1 hàng = bậc ra của đỉnh đó, tổng phần tử trên ma trận = số cạnh
+      tổng phần tử trên 1 cột = bậc vào của đỉnh đó
+
+    + Ma trận trọng số: thay số 1 bằng trọng số của cạnh, số 0 thay bằng vô cùng
+-> Độ phức tạp: O(V^2), dễ cài đặt, có thể truy xuất đến cạnh nhanh chóng, dễ kiểm tra cạnh nối 2 đỉnh
+có kề nhau hay không trong O(1) bằng A[i][j], Nhược điểm: tốn nhiều bộ nhớ
+
+
+- Danh sách cạnh (mật độ thưa) (tối ưu):
+    + Ưu điểm: tiết kiệm bộ nhớ, dễ cài đặt, dễ truy xuất đến cạnh, dễ kiểm tra cạnh nối 2 đỉnh có kề nhau hay không
+    + Nhược điểm: độ phức tạp O(E), không thể truy xuất đến đỉnh nhanh chóng, không thể kiểm tra đỉnh nối 2 đỉnh có kề nhau hay không trong O(1)
+      muốn duyệt các đỉnh kề với đỉnh nào đó, phải duyệt tất cả các cạnh 
+
+
+- Danh sách kề (mật độ thưa) (tối ưu):
+    + Ưu điểm: tiết kiệm bộ nhớ, dễ cài đặt, dễ truy xuất đến đỉnh, dễ kiểm tra đỉnh nối 2 đỉnh có kề nhau hay không trong O(1)
+    + Nhược điểm: cài đặt khó hơn 2 cách còn lại
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+duyệt
+bfs -> stack
+dfs -> queue
+
+đường đi ngắn nhất
+dijkstra -> 2 mảng O(V*E) -> chỉ tìm được đường đi ngắn nhất giữa 1 đỉnh và đỉnh còn lại 
+-> ko dùng cho chu trình âm
+
+bellman-ford -> 1 mảng O(V*E) -> tìm được đường đi ngắn nhất giữa 1 đỉnh và đỉnh còn lại
+-> có thể dùng cho chu trình âm
+
+floyd-warshall -> 1 ma trận O(V^3) -> tìm được đường đi ngắn nhất giữa 2 đỉnh bất kì
+=> tạo ma trận kề -> tạo ma trận trọng số -> tạo ma trận truy vết -> tạo ma trận kết quả
+=> timf duong di den moi cap dinh
+
+
+CAY KHUNG NHO NHAT (khong co nhieu thanh phan lien thong)
+=> KRUSKAL : duong di 
+
+=> PRIM
+
+
+quy hoach dong => tao bang => 

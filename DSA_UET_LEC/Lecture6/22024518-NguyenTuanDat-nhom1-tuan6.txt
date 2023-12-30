@@ -1,0 +1,63 @@
+1. Given a list of integer numbers: 2, 1, 10, 6, 3, 8, 7, 13, 20. 
+- Draw the binary search tree:
+                2
+               / \
+              1   10
+                 /  \
+                6    13
+               / \    \
+              3   8    20
+                 /      
+                7          
+
+- Draw the binary search tree after inserting values:  14, 0, 35:
+                2
+               / \
+              1   10
+             /   /  \
+            0   6    13
+               / \    \
+              3   8    14
+                 /      \
+                7        20
+                          \
+                           35
+                        
+- Draw the binary search tree after deleting values:  6, 13, 35:
+                2
+               / \
+              1   10
+             /   /  \
+            0   7    14
+               / \    \
+              3   8    20
+
+
+2. Given a list of integer numbers: 2, 1, 10, 6, 3, 8, 7, 13, 20.
+- Draw the heap tree:
+                  20   
+                /    \
+              13      10
+             /  \    /  \
+            6    3   8   7   
+           / \ 
+          1   2  
+
+- Draw the heap tree after inserting values:  14, 0, 35:
+                      35   
+                   /      \
+                  /        \
+                20          10
+               /  \        /  \
+             13    14     8    7   
+            /  \  /  \   /
+            1  6  3  0   2
+
+- Draw the heap tree after deleting: 6, 13, 35:
+                    20   
+                  /    \
+                14      10
+               /  \    /  \
+              3    8  7    2   
+             / \ 
+            1   0

@@ -1,0 +1,15 @@
+Bai 3:
+
+Sort the following functions in the increasing order of Big O notations:
+    2^logn = n => O(n) 
+    f1 = 4nlogn + 2n => O(nlogn)
+    f2 = 3n + 100logn => O(n)
+    f3 = n^2 + 10n => O(n^2)
+    f4 = 2^10 => O(1)
+    f5 = 4n => O(n)
+    f6 = n^3 => O(n^3)
+    f7 = 2^logn = n => O(n)
+    f8 = 2^n => O(2^n)
+    f9 = nlogn => O(nlogn)
+
+    Sorted: f4 < f7 < f5 < f2 < f9 < f1 < f3  < f6 < f8

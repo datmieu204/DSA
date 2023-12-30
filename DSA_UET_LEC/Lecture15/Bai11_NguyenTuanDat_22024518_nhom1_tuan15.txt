@@ -1,0 +1,13 @@
+cau 11:
+
+● can consist of numbers, lowercase and uppercase characters
+    ^[a-zA-Z0-9]+$
+
+● can consist of separators: hyphens, underscores, spaces.
+    ^[a-zA-Z0-9\-_\s]+$
+
+● do not have two consecutive separators
+    (?!.*[-_\s][-_\s])
+
+● do not have separators at the start or the end.
+    ^(?![\-\_\s])(?!.*[\-\_\s]$)

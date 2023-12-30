@@ -1,0 +1,51 @@
+Nguyen Tuan Dat _ 22024518 _ Nhom 1 _ Tuan 13
+
+Cau 1:
+    1) <an xml tag>
+    2) <opentag> <closetag>
+    3) </closetag>
+    5) <with attribute=”77”>
+
+Cau 2:
+    1) abc
+    2) abbbbbbbb
+    3) azc
+    4) abcbcbcbc
+    6) azccbbbbcbccc
+
+Cau 3:
+    3) very very fat ugly man
+    4) very very very tall man
+
+Cau 4:
+    /^[^\n]{1,3}\.[^\n]{1,3}\.[^\n]{1,3}\.[^\n]{1,3}$/
+
+Cau 5:  
+    ● (123) 456 7899
+        ^\([1-9]{3}\)\s[1-9]{3}\s[1-9]{4}$
+    ● (123).456.7899
+        ^\([1-9]{3}\)\.[1-9]{3}\.[1-9]{4}$
+    ● (123)-456-7899
+        ^\([1-9]{3}\)\-[1-9]{3}\-[1-9]{4}$
+    ● 123-456-7899
+        ^[1-9]{3}\-[1-9]{3}\-[1-9]{4}$
+    ● 123 456 7899
+        ^[1-9]{3}\s[1-9]{3}\s[1-9]{4}$
+    ● 1234567899
+        ^[1-9]{3}[1-9]{3}[1-9]{4}$
+
+    => Use for all: 
+        ^\(?[1-9]{3}\)?[- .]?[1-9]{3}[- .]?[1-9]{4}$
+
+Cau 6:
+● can consist of numbers, lowercase and uppercase characters
+    ^[a-zA-Z0-9]+$
+
+● can consist of separators: hyphens, underscores, spaces.
+    ^[a-zA-Z0-9\-_\s]+$
+
+● do not have two consecutive separators
+    (?!.*[-_\s][-_\s])
+
+● do not have separators at the start or the end.
+    ^(?![\-\_\s])(?!.*[\-\_\s]$)
