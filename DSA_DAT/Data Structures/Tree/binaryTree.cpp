@@ -10,6 +10,8 @@
 
 #include <iostream>
 #include <vector>
+#include <queue>
+#include <stack>
 
 using namespace std;
 
@@ -122,6 +124,40 @@ void free(vector<Tree*> nodes)
 {
     for(Tree* child : nodes){
         delete child;
+    }
+}
+
+// duyệt theo chiều rộng 
+void bft(Tree* root){
+    queue<Tree*> q;
+    q.push(root);
+
+    while(!q.empty()){
+        Tree* node = q.front();
+        q.pop();
+
+        cout << node->data << " ";
+
+        for(Tree* child : node->children){
+            q.push(child);
+        }
+    }
+}
+
+// duyệt theo chiều sâu
+void dft(Tree* root){
+    stack<Tree*> s;
+    s.push(root);
+
+    while(!s.empty()){
+        Tree* node = s.top();
+        s.pop();
+
+        cout << node->data << " ";
+
+        for(Tree* child : node->children){
+            s.push(child);
+        }
     }
 }
 
